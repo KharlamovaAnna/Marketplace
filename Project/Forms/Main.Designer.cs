@@ -45,6 +45,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Войти";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.LogIn_OpenForm_Click);
             // 
             // button2
             // 

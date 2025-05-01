@@ -15,6 +15,7 @@ namespace Project.Forms
         public LogIn()
         {
             InitializeComponent();
+            //button1.BackColor = Color.Transparent;
         }
     }
 }
