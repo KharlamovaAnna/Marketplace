@@ -59,6 +59,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Регистрация";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.SignUp_OpenForm_Click);
             // 
             // Main
             // 

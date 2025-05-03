@@ -37,20 +37,26 @@
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(103, 176);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(116, 180);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 40);
+            this.textBox1.Size = new System.Drawing.Size(242, 40);
             this.textBox1.TabIndex = 0;
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // textBox2
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(103, 252);
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.textBox2.Location = new System.Drawing.Point(116, 257);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(269, 40);
+            this.textBox2.Size = new System.Drawing.Size(242, 40);
             this.textBox2.TabIndex = 1;
+            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
+            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // button1
             // 
@@ -74,6 +80,7 @@
             this.DoubleBuffered = true;
             this.Name = "LogIn";
             this.Text = " ";
+            this.Activated += new System.EventHandler(this.LogIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

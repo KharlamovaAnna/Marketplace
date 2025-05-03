@@ -1,6 +1,6 @@
 ﻿namespace Project.Forms
 {
-    partial class SignIn
+    partial class SignUp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignIn));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUp));
             this.SuspendLayout();
             // 
-            // SignIn
+            // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(476, 475);
-            this.Name = "SignIn";
-            this.Text = "SignIn";
+            this.Name = "SignUp";
             this.ResumeLayout(false);
 
         }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project.Forms
 {
-    public partial class SignIn : Form
+    public partial class SignUp : Form
     {
-        public SignIn()
+        public SignUp()
         {
             InitializeComponent();
         }

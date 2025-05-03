@@ -28,6 +28,13 @@ namespace Project
 
             this.Hide();
         }
+        private void SignUp_OpenForm_Click(object sender, EventArgs e)
+        {
+            SignUp SignUpForm = new SignUp();
+            SignUpForm.Show();
+            SignUpForm.FormClosed += (s, args) => this.Show();
 
+            this.Hide();
+        }
     }
 }
