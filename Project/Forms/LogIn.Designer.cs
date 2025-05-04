@@ -78,6 +78,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.DoubleBuffered = true;
+            this.MaximizeBox = false;
             this.Name = "LogIn";
             this.Text = " ";
             this.Activated += new System.EventHandler(this.LogIn_Load);
