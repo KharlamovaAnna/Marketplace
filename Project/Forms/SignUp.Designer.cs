@@ -29,43 +29,71 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUp));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TextBox_SignUpForm_Login = new System.Windows.Forms.TextBox();
+            this.TextBox_SignUpForm_Password1 = new System.Windows.Forms.TextBox();
+            this.TextBox_SignUpForm_Password2 = new System.Windows.Forms.TextBox();
+            this.TextBox_SignUpForm_Name = new System.Windows.Forms.TextBox();
+            this.Button_SignUpForm_SignUp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // TextBox_SignUpForm_Login
             // 
-            this.textBox1.Location = new System.Drawing.Point(107, 154);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 43);
-            this.textBox1.TabIndex = 4;
+            this.TextBox_SignUpForm_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.TextBox_SignUpForm_Login.Location = new System.Drawing.Point(110, 154);
+            this.TextBox_SignUpForm_Login.MaxLength = 20;
+            this.TextBox_SignUpForm_Login.Multiline = true;
+            this.TextBox_SignUpForm_Login.Name = "TextBox_SignUpForm_Login";
+            this.TextBox_SignUpForm_Login.Size = new System.Drawing.Size(255, 43);
+            this.TextBox_SignUpForm_Login.TabIndex = 4;
+            this.TextBox_SignUpForm_Login.Enter += new System.EventHandler(this.TextBox_SignUpForm_Login_Enter);
+            this.TextBox_SignUpForm_Login.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_SignUpForm_Login_KeyPress);
+            this.TextBox_SignUpForm_Login.Leave += new System.EventHandler(this.TextBox_SignUpForm_Login_Leave);
             // 
-            // textBox2
+            // TextBox_SignUpForm_Password1
             // 
-            this.textBox2.Location = new System.Drawing.Point(107, 203);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(269, 43);
-            this.textBox2.TabIndex = 5;
+            this.TextBox_SignUpForm_Password1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.TextBox_SignUpForm_Password1.Location = new System.Drawing.Point(110, 252);
+            this.TextBox_SignUpForm_Password1.MaxLength = 100;
+            this.TextBox_SignUpForm_Password1.Multiline = true;
+            this.TextBox_SignUpForm_Password1.Name = "TextBox_SignUpForm_Password1";
+            this.TextBox_SignUpForm_Password1.Size = new System.Drawing.Size(255, 43);
+            this.TextBox_SignUpForm_Password1.TabIndex = 5;
+            this.TextBox_SignUpForm_Password1.Enter += new System.EventHandler(this.TextBox_SignUpForm_Password1_Enter);
+            this.TextBox_SignUpForm_Password1.Leave += new System.EventHandler(this.TextBox_SignUpForm_Password1_Leave);
             // 
-            // textBox3
+            // TextBox_SignUpForm_Password2
             // 
-            this.textBox3.Location = new System.Drawing.Point(107, 252);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(269, 43);
-            this.textBox3.TabIndex = 6;
+            this.TextBox_SignUpForm_Password2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.TextBox_SignUpForm_Password2.Location = new System.Drawing.Point(110, 301);
+            this.TextBox_SignUpForm_Password2.MaxLength = 100;
+            this.TextBox_SignUpForm_Password2.Multiline = true;
+            this.TextBox_SignUpForm_Password2.Name = "TextBox_SignUpForm_Password2";
+            this.TextBox_SignUpForm_Password2.Size = new System.Drawing.Size(255, 43);
+            this.TextBox_SignUpForm_Password2.TabIndex = 6;
+            this.TextBox_SignUpForm_Password2.Enter += new System.EventHandler(this.TextBox_SignUpForm_Password2_Enter);
+            this.TextBox_SignUpForm_Password2.Leave += new System.EventHandler(this.TextBox_SignUpForm_Password2_Leave);
             // 
-            // textBox4
+            // TextBox_SignUpForm_Name
             // 
-            this.textBox4.Location = new System.Drawing.Point(107, 301);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(269, 43);
-            this.textBox4.TabIndex = 7;
+            this.TextBox_SignUpForm_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.TextBox_SignUpForm_Name.Location = new System.Drawing.Point(110, 203);
+            this.TextBox_SignUpForm_Name.MaxLength = 20;
+            this.TextBox_SignUpForm_Name.Multiline = true;
+            this.TextBox_SignUpForm_Name.Name = "TextBox_SignUpForm_Name";
+            this.TextBox_SignUpForm_Name.Size = new System.Drawing.Size(255, 43);
+            this.TextBox_SignUpForm_Name.TabIndex = 7;
+            this.TextBox_SignUpForm_Name.Enter += new System.EventHandler(this.TextBox_SignUpForm_Name_Enter);
+            this.TextBox_SignUpForm_Name.Leave += new System.EventHandler(this.TextBox_SignUpForm_Name_Leave);
+            // 
+            // Button_SignUpForm_SignUp
+            // 
+            this.Button_SignUpForm_SignUp.Location = new System.Drawing.Point(127, 350);
+            this.Button_SignUpForm_SignUp.Name = "Button_SignUpForm_SignUp";
+            this.Button_SignUpForm_SignUp.Size = new System.Drawing.Size(213, 44);
+            this.Button_SignUpForm_SignUp.TabIndex = 8;
+            this.Button_SignUpForm_SignUp.Text = "Зарегистрироваться";
+            this.Button_SignUpForm_SignUp.UseVisualStyleBackColor = true;
+            this.Button_SignUpForm_SignUp.Click += new System.EventHandler(this.Button_SignUp_Click);
             // 
             // SignUp
             // 
@@ -74,10 +102,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(476, 475);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Button_SignUpForm_SignUp);
+            this.Controls.Add(this.TextBox_SignUpForm_Name);
+            this.Controls.Add(this.TextBox_SignUpForm_Password2);
+            this.Controls.Add(this.TextBox_SignUpForm_Password1);
+            this.Controls.Add(this.TextBox_SignUpForm_Login);
             this.MaximizeBox = false;
             this.Name = "SignUp";
             this.ResumeLayout(false);
@@ -87,9 +116,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TextBox_SignUpForm_Login;
+        private System.Windows.Forms.TextBox TextBox_SignUpForm_Password1;
+        private System.Windows.Forms.TextBox TextBox_SignUpForm_Password2;
+        private System.Windows.Forms.TextBox TextBox_SignUpForm_Name;
+        private System.Windows.Forms.Button Button_SignUpForm_SignUp;
     }
 }

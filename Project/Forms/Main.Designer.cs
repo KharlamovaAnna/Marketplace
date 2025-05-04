@@ -1,4 +1,6 @@
-﻿namespace Project
+﻿using System.Drawing;
+
+namespace Project
 {
     partial class Main
     {
@@ -35,6 +37,7 @@
             // 
             // button1
             // 
+            this.button1.BackColor = Color.FromArgb(252, 110, 48);
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -49,6 +52,7 @@
             // 
             // button2
             // 
+            this.button2.BackColor = Color.FromArgb(0, 49, 216);
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));

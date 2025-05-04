@@ -56,7 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\AppContext.cs" />
+    <Compile Include="DataBase\AppContext.cs" />
     <Compile Include="Classes\Favourite.cs" />
     <Compile Include="Classes\Hidden_Product.cs" />
     <Compile Include="Classes\Option.cs" />

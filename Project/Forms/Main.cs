@@ -16,9 +16,6 @@ namespace Project
         public Main()
         {
             InitializeComponent();
-            button1.BackColor = Color.FromArgb(252, 110, 48);
-            //button1.BackColor = Color.Transparent;
-            button2.BackColor = Color.FromArgb(0, 49, 216);
         }
         private void LogIn_OpenForm_Click(object sender, EventArgs e)
         {
@@ -36,5 +33,7 @@ namespace Project
 
             this.Hide();
         }
+
+       
     }
 }
