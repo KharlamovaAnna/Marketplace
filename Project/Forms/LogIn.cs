@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Project.Classes;
+using System;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Project.Forms
 {
@@ -16,42 +11,90 @@ namespace Project.Forms
         public LogIn()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
-       
+        /// <summary>
+        /// TextBox_LogInForm_LogIn
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_LogInForm_LogIn_Enter(object sender, EventArgs e)
+        {
+            if (TextBox_LogInForm_LogIn.Text == "Username")
+            {
+                TextBox_LogInForm_LogIn.Text = "";
+                TextBox_LogInForm_LogIn.ForeColor = SystemColors.WindowText;
+            }
+        }
+        private void TextBox_LogInForm_LogIn_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TextBox_LogInForm_LogIn.Text))
+            {
+                TextBox_LogInForm_LogIn.Text = "Username";
+                TextBox_LogInForm_LogIn.ForeColor = SystemColors.GrayText;
+            }
+        }
+        /// <summary>
+        /// TextBox_LogInForm_Password
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_LogInForm_Password_Enter(object sender, EventArgs e)
+        {
+            if (TextBox_LogInForm_Password.Text == "Password")
+            {
+                TextBox_LogInForm_Password.Text = "";
+                TextBox_LogInForm_Password.ForeColor = SystemColors.WindowText;
+            }
+        }
+        private void TextBox_LogInForm_Password_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TextBox_LogInForm_Password.Text))
+            {
+                TextBox_LogInForm_Password.Text = "Password";
+                TextBox_LogInForm_Password.ForeColor = SystemColors.GrayText;
+            }
+        }
 
-        private void TextBox1_Enter(object sender, EventArgs e)
+        public User AuthenticatedUser { get; private set; }
+        /// <summary>
+        /// ну вход короче туда сюда
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_LogInForm_LogIn_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "Name") 
+            using (var db = new Classes.AppContext())
             {
-                textBox1.Text = "";
-                textBox1.ForeColor = SystemColors.WindowText;
+                var user = db.Users.AsNoTracking().FirstOrDefault(u => u.Username.Equals(TextBox_LogInForm_LogIn.Text.Trim(), StringComparison.Ordinal));
+
+                if (user == null)
+                {
+                    MessageBox.Show("Пользователь с таким именем не найден", "Ошибка входа", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!VerifyPassword(TextBox_LogInForm_Password.Text, user.Password_Hash))
+                {
+                    MessageBox.Show("Неверный пароль", "Ошибка входа", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                AuthenticatedUser = user;
+                MessageBox.Show($"Добро пожаловать, {user.Name}!", "Успешный вход", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
         }
-        private void TextBox1_Leave(object sender, EventArgs e)
+
+        public static bool VerifyPassword(string password, string hashedPassword)
         {
-            if (string.IsNullOrWhiteSpace(textBox2.Text))
-            {
-                textBox1.Text = "Name";
-                textBox1.ForeColor = SystemColors.GrayText;
-            }
+            string inputHash = SignUp.HashPassword(password);
+            return inputHash == hashedPassword;
         }
-        private void TextBox2_Enter(object sender, EventArgs e)
-        {
-            if (textBox2.Text == "Password")
-            {
-                textBox2.Text = "";
-                textBox2.ForeColor = SystemColors.WindowText;
-            }
-        }
-        private void TextBox2_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(textBox2.Text))
-            {
-                textBox2.Text = "Password";
-                textBox2.ForeColor = SystemColors.GrayText;
-            }
-        }
+    }
 
         
     }
-}
+

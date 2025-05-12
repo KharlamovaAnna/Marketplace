@@ -1,28 +1,19 @@
 ﻿using Project.Classes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Entity.Infrastructure;
-using System.Data.Entity.Validation;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Project.Forms
 {
     public partial class SignUp : Form
     {
-        
         public SignUp()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         private void Button_SignUp_Click(object sender, EventArgs e)
         {
@@ -35,10 +26,7 @@ namespace Project.Forms
                 {
                     if (db.Users.Any(u => u.Username == TextBox_SignUpForm_Login.Text.Trim()))
                     {
-                        MessageBox.Show("Это имя пользователя уже занято",
-                                      "Ошибка",
-                                      MessageBoxButtons.OK,
-                                      MessageBoxIcon.Warning);
+                        MessageBox.Show("Это имя пользователя уже занято", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
 
@@ -53,22 +41,16 @@ namespace Project.Forms
                     db.Users.Add(newUser);
                     db.SaveChanges();
 
-                    MessageBox.Show("Регистрация успешно завершена!",
-                                  "Успех",
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Information);
+                    MessageBox.Show("Вы успешно зарегистрировались!", "Все круто", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при регистрации: {ex.Message}",
-                              "Ошибка",
-                              MessageBoxButtons.OK,
-                              MessageBoxIcon.Error);
-            }    
-        }   
+                MessageBox.Show($"Ошибка при регистрации: {ex.Message}", "Эррор", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private bool ValidateInput()
         {
@@ -77,7 +59,7 @@ namespace Project.Forms
                 ShowValidationError("Введите имя пользователя", TextBox_SignUpForm_Login);
                 return false;
             }
-            
+
             if (string.IsNullOrWhiteSpace(TextBox_SignUpForm_Password1.Text))
             {
                 ShowValidationError("Введите пароль", TextBox_SignUpForm_Password1);
@@ -99,29 +81,30 @@ namespace Project.Forms
             return true;
         }
 
-        private void ShowValidationError(string message, System.Windows.Forms.TextBox textBox)
+        private void ShowValidationError(string message, TextBox textBox)
         {
             MessageBox.Show(message, "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             textBox.Focus();
             textBox.SelectAll();
         }
 
-        private string HashPassword(string password)
+        public static string HashPassword(string inputPassword)
         {
-            // Используем PBKDF2 для безопасного хэширования
-            using (var deriveBytes = new Rfc2898DeriveBytes(password, 16, 100000))
+            using (SHA256 sha256 = SHA256.Create())
             {
-                byte[] salt = deriveBytes.Salt;
-                byte[] hash = deriveBytes.GetBytes(20);
-                return $"{Convert.ToBase64String(salt)}.{Convert.ToBase64String(hash)}";
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(inputPassword));
+                return Convert.ToBase64String(bytes);
             }
         }
-        //
-        //SignUpForm_Login
-        //
+        
+        /// <summary>
+        /// SignUpForm_Login
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_SignUpForm_Login_Enter(object sender, EventArgs e)
         {
-            if (TextBox_SignUpForm_Login.Text == "Login")
+            if (TextBox_SignUpForm_Login.Text == "Username")
             {
                 TextBox_SignUpForm_Login.Text = "";
                 TextBox_SignUpForm_Login.ForeColor = SystemColors.WindowText;
@@ -131,7 +114,7 @@ namespace Project.Forms
         {
             if (string.IsNullOrWhiteSpace(TextBox_SignUpForm_Login.Text))
             {
-                TextBox_SignUpForm_Login.Text = "Login";
+                TextBox_SignUpForm_Login.Text = "Username";
                 TextBox_SignUpForm_Login.ForeColor = SystemColors.GrayText;
             }
         }
@@ -142,9 +125,11 @@ namespace Project.Forms
                 e.Handled = true;
             }
         }
-        //
-        //SignUpForm_Name
-        //
+        /// <summary>
+        /// SignUpForm_Name
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_SignUpForm_Name_Enter(object sender, EventArgs e)
         {
             if (TextBox_SignUpForm_Name.Text == "Name")
@@ -161,9 +146,11 @@ namespace Project.Forms
                 TextBox_SignUpForm_Name.ForeColor = SystemColors.GrayText;
             }
         }
-        //
-        //SignUpForm_Password1
-        //
+        /// <summary>
+        /// SignUpForm_Password1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_SignUpForm_Password1_Enter(object sender, EventArgs e)
         {
             if (TextBox_SignUpForm_Password1.Text == "Password")
@@ -180,9 +167,11 @@ namespace Project.Forms
                 TextBox_SignUpForm_Password1.ForeColor = SystemColors.GrayText;
             }
         }
-        //
-        //SignUpForm_Password2 (пароль для проверки)
-        //
+        /// <summary>
+        /// SignUpForm_Password2 (пароль для проверки)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_SignUpForm_Password2_Enter(object sender, EventArgs e)
         {
             if (TextBox_SignUpForm_Password2.Text == "Repeat password")
@@ -199,6 +188,7 @@ namespace Project.Forms
                 TextBox_SignUpForm_Password2.ForeColor = SystemColors.GrayText;
             }
         }
+
 
     }
 }

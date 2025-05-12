@@ -31,39 +31,37 @@ namespace Project
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Button_MainForm_LogInOpenForm = new System.Windows.Forms.Button();
+            this.Button_MainForm_SignUpOpenForm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // Button_MainForm_LogInOpenForm
             // 
-            this.button1.BackColor = Color.FromArgb(252, 110, 48);
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(291, 185);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 62);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Войти";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.LogIn_OpenForm_Click);
+            this.Button_MainForm_LogInOpenForm.BackColor = System.Drawing.Color.Transparent;
+            this.Button_MainForm_LogInOpenForm.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Button_MainForm_LogInOpenForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_MainForm_LogInOpenForm.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Button_MainForm_LogInOpenForm.ForeColor = System.Drawing.Color.White;
+            this.Button_MainForm_LogInOpenForm.Location = new System.Drawing.Point(280, 200);
+            this.Button_MainForm_LogInOpenForm.Name = "Button_MainForm_LogInOpenForm";
+            this.Button_MainForm_LogInOpenForm.Size = new System.Drawing.Size(199, 61);
+            this.Button_MainForm_LogInOpenForm.TabIndex = 0;
+            this.Button_MainForm_LogInOpenForm.UseVisualStyleBackColor = false;
+            this.Button_MainForm_LogInOpenForm.Click += new System.EventHandler(this.Button_MainForm_LogInOpenForm_Click);
             // 
-            // button2
+            // Button_MainForm_SignUpOpenForm
             // 
-            this.button2.BackColor = Color.FromArgb(0, 49, 216);
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(291, 279);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(177, 62);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Регистрация";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.SignUp_OpenForm_Click);
+            this.Button_MainForm_SignUpOpenForm.BackColor = System.Drawing.Color.Transparent;
+            this.Button_MainForm_SignUpOpenForm.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Button_MainForm_SignUpOpenForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_MainForm_SignUpOpenForm.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Button_MainForm_SignUpOpenForm.ForeColor = System.Drawing.Color.White;
+            this.Button_MainForm_SignUpOpenForm.Location = new System.Drawing.Point(280, 293);
+            this.Button_MainForm_SignUpOpenForm.Name = "Button_MainForm_SignUpOpenForm";
+            this.Button_MainForm_SignUpOpenForm.Size = new System.Drawing.Size(199, 56);
+            this.Button_MainForm_SignUpOpenForm.TabIndex = 2;
+            this.Button_MainForm_SignUpOpenForm.UseVisualStyleBackColor = false;
+            this.Button_MainForm_SignUpOpenForm.Click += new System.EventHandler(this.Button_MainForm_SignUpOpenForm_Click);
             // 
             // Main
             // 
@@ -72,8 +70,8 @@ namespace Project
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(491, 489);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Button_MainForm_SignUpOpenForm);
+            this.Controls.Add(this.Button_MainForm_LogInOpenForm);
             this.MaximizeBox = false;
             this.Name = "Main";
             this.ResumeLayout(false);
@@ -82,8 +80,8 @@ namespace Project
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Button_MainForm_LogInOpenForm;
+        private System.Windows.Forms.Button Button_MainForm_SignUpOpenForm;
     }
 }
 
