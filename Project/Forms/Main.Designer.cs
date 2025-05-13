@@ -39,6 +39,8 @@ namespace Project
             // 
             this.Button_MainForm_LogInOpenForm.BackColor = System.Drawing.Color.Transparent;
             this.Button_MainForm_LogInOpenForm.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Button_MainForm_LogInOpenForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Button_MainForm_LogInOpenForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Button_MainForm_LogInOpenForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_MainForm_LogInOpenForm.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Button_MainForm_LogInOpenForm.ForeColor = System.Drawing.Color.White;
@@ -53,6 +55,8 @@ namespace Project
             // 
             this.Button_MainForm_SignUpOpenForm.BackColor = System.Drawing.Color.Transparent;
             this.Button_MainForm_SignUpOpenForm.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Button_MainForm_SignUpOpenForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Button_MainForm_SignUpOpenForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Button_MainForm_SignUpOpenForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_MainForm_SignUpOpenForm.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Button_MainForm_SignUpOpenForm.ForeColor = System.Drawing.Color.White;

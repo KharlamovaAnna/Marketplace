@@ -174,7 +174,7 @@ namespace Project.Forms
         /// <param name="e"></param>
         private void TextBox_SignUpForm_Password2_Enter(object sender, EventArgs e)
         {
-            if (TextBox_SignUpForm_Password2.Text == "Repeat password")
+            if (TextBox_SignUpForm_Password2.Text == "Confirm password")
             {
                 TextBox_SignUpForm_Password2.Text = "";
                 TextBox_SignUpForm_Password2.ForeColor = SystemColors.WindowText;
@@ -184,11 +184,11 @@ namespace Project.Forms
         {
             if (string.IsNullOrWhiteSpace(TextBox_SignUpForm_Password2.Text))
             {
-                TextBox_SignUpForm_Password2.Text = "Repeat password";
+                TextBox_SignUpForm_Password2.Text = "Confirm password";
                 TextBox_SignUpForm_Password2.ForeColor = SystemColors.GrayText;
             }
         }
 
-
+        
     }
 }
