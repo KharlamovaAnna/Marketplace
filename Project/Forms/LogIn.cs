@@ -14,10 +14,8 @@ namespace Project.Forms
             this.StartPosition = FormStartPosition.CenterScreen;
         }
         /// <summary>
-        /// TextBox_LogInForm_LogIn
+        /// события для TextBox_LogInForm_LogIn
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void TextBox_LogInForm_LogIn_Enter(object sender, EventArgs e)
         {
             if (TextBox_LogInForm_LogIn.Text == "Username")
@@ -35,10 +33,8 @@ namespace Project.Forms
             }
         }
         /// <summary>
-        /// TextBox_LogInForm_Password
+        /// события для TextBox_LogInForm_Password
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void TextBox_LogInForm_Password_Enter(object sender, EventArgs e)
         {
             if (TextBox_LogInForm_Password.Text == "Password")
@@ -60,8 +56,6 @@ namespace Project.Forms
         /// <summary>
         /// ну вход короче туда сюда
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Button_LogInForm_LogIn_Click(object sender, EventArgs e)
         {
             using (var db = new Classes.AppContext())
@@ -87,7 +81,9 @@ namespace Project.Forms
                 this.Close();
             }
         }
-
+        /// <summary>
+        /// верификация пароля
+        /// </summary>
         public static bool VerifyPassword(string password, string hashedPassword)
         {
             string inputHash = SignUp.HashPassword(password);

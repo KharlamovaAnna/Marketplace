@@ -32,8 +32,8 @@
             this.Button_ItemInfoForm_Like = new System.Windows.Forms.Button();
             this.Button_ItemInfoForm_Dislike = new System.Windows.Forms.Button();
             this.Button_ItemInfoForm_Favourites = new System.Windows.Forms.Button();
-            this.Textbox_ItemInfoForm_ItemName = new System.Windows.Forms.TextBox();
-            this.Textbox_ItemInfoForm_ItemDescription = new System.Windows.Forms.TextBox();
+            this.Label_ItemInfoForm_ItemName = new System.Windows.Forms.Label();
+            this.Label_ItemInfoForm_ItemDescription = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Button_ItemInfoForm_Like
@@ -75,24 +75,21 @@
             this.Button_ItemInfoForm_Favourites.Size = new System.Drawing.Size(360, 53);
             this.Button_ItemInfoForm_Favourites.TabIndex = 2;
             this.Button_ItemInfoForm_Favourites.UseVisualStyleBackColor = false;
+            this.Button_ItemInfoForm_Favourites.Click += new System.EventHandler(this.Button_ItemInfoForm_Favourites_Click);
             // 
-            // Textbox_ItemInfoForm_ItemName
+            // Label_ItemInfoForm_ItemName
             // 
-            this.Textbox_ItemInfoForm_ItemName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Textbox_ItemInfoForm_ItemName.Location = new System.Drawing.Point(66, 41);
-            this.Textbox_ItemInfoForm_ItemName.Multiline = true;
-            this.Textbox_ItemInfoForm_ItemName.Name = "Textbox_ItemInfoForm_ItemName";
-            this.Textbox_ItemInfoForm_ItemName.Size = new System.Drawing.Size(325, 49);
-            this.Textbox_ItemInfoForm_ItemName.TabIndex = 3;
+            this.Label_ItemInfoForm_ItemName.Location = new System.Drawing.Point(63, 38);
+            this.Label_ItemInfoForm_ItemName.Name = "Label_ItemInfoForm_ItemName";
+            this.Label_ItemInfoForm_ItemName.Size = new System.Drawing.Size(328, 45);
+            this.Label_ItemInfoForm_ItemName.TabIndex = 5;
             // 
-            // Textbox_ItemInfoForm_ItemDescription
+            // Label_ItemInfoForm_ItemDescription
             // 
-            this.Textbox_ItemInfoForm_ItemDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Textbox_ItemInfoForm_ItemDescription.Location = new System.Drawing.Point(66, 291);
-            this.Textbox_ItemInfoForm_ItemDescription.Multiline = true;
-            this.Textbox_ItemInfoForm_ItemDescription.Name = "Textbox_ItemInfoForm_ItemDescription";
-            this.Textbox_ItemInfoForm_ItemDescription.Size = new System.Drawing.Size(325, 38);
-            this.Textbox_ItemInfoForm_ItemDescription.TabIndex = 4;
+            this.Label_ItemInfoForm_ItemDescription.Location = new System.Drawing.Point(63, 289);
+            this.Label_ItemInfoForm_ItemDescription.Name = "Label_ItemInfoForm_ItemDescription";
+            this.Label_ItemInfoForm_ItemDescription.Size = new System.Drawing.Size(328, 37);
+            this.Label_ItemInfoForm_ItemDescription.TabIndex = 6;
             // 
             // ItemInfo
             // 
@@ -101,14 +98,14 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(463, 502);
-            this.Controls.Add(this.Textbox_ItemInfoForm_ItemDescription);
-            this.Controls.Add(this.Textbox_ItemInfoForm_ItemName);
+            this.Controls.Add(this.Label_ItemInfoForm_ItemDescription);
+            this.Controls.Add(this.Label_ItemInfoForm_ItemName);
             this.Controls.Add(this.Button_ItemInfoForm_Favourites);
             this.Controls.Add(this.Button_ItemInfoForm_Dislike);
             this.Controls.Add(this.Button_ItemInfoForm_Like);
+            this.MaximizeBox = false;
             this.Name = "ItemInfo";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -117,7 +114,7 @@
         private System.Windows.Forms.Button Button_ItemInfoForm_Like;
         private System.Windows.Forms.Button Button_ItemInfoForm_Dislike;
         private System.Windows.Forms.Button Button_ItemInfoForm_Favourites;
-        private System.Windows.Forms.TextBox Textbox_ItemInfoForm_ItemName;
-        private System.Windows.Forms.TextBox Textbox_ItemInfoForm_ItemDescription;
+        private System.Windows.Forms.Label Label_ItemInfoForm_ItemName;
+        private System.Windows.Forms.Label Label_ItemInfoForm_ItemDescription;
     }
 }

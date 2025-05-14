@@ -1,6 +1,6 @@
 ﻿namespace Project.Forms
 {
-    partial class Recommendations
+    partial class Favourite
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Recommendations));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Favourite));
             this.SuspendLayout();
             // 
-            // Recommendations
+            // Favourite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(474, 507);
+            this.ClientSize = new System.Drawing.Size(494, 493);
             this.MaximizeBox = false;
-            this.Name = "Recommendations";
+            this.Name = "Favourite";
             this.ResumeLayout(false);
 
         }

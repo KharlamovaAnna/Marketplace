@@ -40,7 +40,6 @@ namespace Project.Forms
 
                     db.Users.Add(newUser);
                     db.SaveChanges();
-
                     MessageBox.Show("Вы успешно зарегистрировались!", "Все круто", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                     this.Close();
@@ -77,7 +76,6 @@ namespace Project.Forms
                 ShowValidationError("Пароли не совпадают", TextBox_SignUpForm_Password2);
                 return false;
             }
-
             return true;
         }
 
@@ -87,7 +85,9 @@ namespace Project.Forms
             textBox.Focus();
             textBox.SelectAll();
         }
-
+        /// <summary>
+        /// хеширование пароля 
+        /// </summary>
         public static string HashPassword(string inputPassword)
         {
             using (SHA256 sha256 = SHA256.Create())
@@ -96,12 +96,9 @@ namespace Project.Forms
                 return Convert.ToBase64String(bytes);
             }
         }
-        
         /// <summary>
-        /// SignUpForm_Login
+        /// события для SignUpForm_Login
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void TextBox_SignUpForm_Login_Enter(object sender, EventArgs e)
         {
             if (TextBox_SignUpForm_Login.Text == "Username")
@@ -126,10 +123,8 @@ namespace Project.Forms
             }
         }
         /// <summary>
-        /// SignUpForm_Name
+        /// события для SignUpForm_Name
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void TextBox_SignUpForm_Name_Enter(object sender, EventArgs e)
         {
             if (TextBox_SignUpForm_Name.Text == "Name")
@@ -147,10 +142,8 @@ namespace Project.Forms
             }
         }
         /// <summary>
-        /// SignUpForm_Password1
+        /// события для SignUpForm_Password1
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void TextBox_SignUpForm_Password1_Enter(object sender, EventArgs e)
         {
             if (TextBox_SignUpForm_Password1.Text == "Password")
@@ -168,10 +161,8 @@ namespace Project.Forms
             }
         }
         /// <summary>
-        /// SignUpForm_Password2 (пароль для проверки)
+        /// события для SignUpForm_Password2 (пароль для проверки)
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void TextBox_SignUpForm_Password2_Enter(object sender, EventArgs e)
         {
             if (TextBox_SignUpForm_Password2.Text == "Confirm password")

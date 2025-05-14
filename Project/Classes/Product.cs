@@ -13,6 +13,9 @@ namespace Project.Classes
         public string Desctiption { get; set; }
         public decimal Price { get; set; }
         public string Category { get; set; }
-        // image url это че как
+        /// <summary>
+        /// ссылка на изображение товара
+        /// </summary>
+        public string Image_url { get; set; }
     }
 }

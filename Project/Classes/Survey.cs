@@ -11,7 +11,10 @@ namespace Project.Classes
         public int ID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public bool Is_Active { get; set; } // ????
+        /// <summary>
+        /// флаг активности опроса
+        /// </summary>
+        public bool Is_Active { get; set; }
 
     }
 }

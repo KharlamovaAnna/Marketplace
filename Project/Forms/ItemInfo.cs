@@ -7,6 +7,15 @@ namespace Project.Forms
         public ItemInfo()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
+
+        private void Button_ItemInfoForm_Favourites_Click(object sender, System.EventArgs e)
+        {
+            Favourite favourite = new Favourite();
+            favourite.Show();
+        }
+
+      
     }
 }
