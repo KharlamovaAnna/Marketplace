@@ -1,17 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Project.Classes
+﻿namespace Project.Classes
 {
     public class Question
     {
+        /// <summary>
+        /// айди вопроса
+        /// </summary>
         public int ID { get; set; }
+        /// <summary>
+        /// айди опросника
+        /// </summary>
         public int Survey_ID { get; set; }
+        /// <summary>
+        /// текст
+        /// </summary>
         public string Text { get; set; }
+        /// <summary>
+        /// тип вопроса
+        /// </summary>
         public string Question_Type { get; set; }
-
     }
 }
