@@ -50,6 +50,7 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestsClasses\ItemInfoTests.cs" />
     <Compile Include="TestsClasses\MainFormTests.cs" />
     <Compile Include="TestsClasses\LogInTests.cs" />
     <Compile Include="TestsClasses\SignUpTests.cs" />

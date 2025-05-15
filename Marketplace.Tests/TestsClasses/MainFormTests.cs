@@ -6,13 +6,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 using System.Windows.Forms;
 
 namespace Marketplace.Tests
 {
     [TestClass]
-    public class MainTests
+    public class MainFormTests
     {
         /// <summary>
         /// тест: проверяет, что открывается форма авторизации
@@ -29,27 +28,6 @@ namespace Marketplace.Tests
             Assert.IsFalse(mainForm.Visible, "Главная форма должна быть скрыта");
         }
 
-        /// <summary>
-        /// тест: проверяет, что форма LogIn открывается в правильном потоке
-        /// </summary>
-        [TestMethod]
-        public void Button_LogInOpenForm_OpensLogInForm()
-        {
-            Form loginForm = null;
-
-            var thread = new System.Threading.Thread(() =>
-            {
-                var mainForm = new Main();
-                mainForm.Button_MainForm_LogInOpenForm_Click(null, EventArgs.Empty);
-                loginForm = System.Windows.Forms.Application.OpenForms.OfType<LogIn>().FirstOrDefault();
-            });
-
-            thread.SetApartmentState(System.Threading.ApartmentState.STA);
-            thread.Start();
-            thread.Join(); 
-
-            Assert.IsNotNull(loginForm, "Форма LogIn должна открыться");
-        }
 
         /// <summary>
         /// тест: проверяет, что открывается форма регистрации
