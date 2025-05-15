@@ -36,16 +36,28 @@ namespace Marketplace.Tests
         [TestMethod]
         public void VerifyPassword_WrongPassword_ReturnsFalse()
         {
-            // Arrange
             string hashedPassword = SignUp.HashPassword("CorrectPassword");
 
-            // Act
             bool result = LogIn.VerifyPassword("WrongPassword", hashedPassword);
 
-            // Assert
             Assert.IsFalse(result, "Неправильный пароль должен быть отклонен");
         }
 
-        
+        /// <summary>
+        /// тест:проверяет поведение метода, когда пользователя не существует в бд
+        /// </summary>
+        [TestMethod]
+        public void Button_LogInForm_LogIn_Click_UserNotFound_ShowErrorMessage()
+        {
+            var loginForm = new LogIn();
+            loginForm.TextBox_LogInForm_LogIn.Text = "NonExistentUser";
+            loginForm.TextBox_LogInForm_Password.Text = "AnyPassword";
+
+            loginForm.Button_LogInForm_LogIn_Click(null, EventArgs.Empty);
+
+            Assert.IsNull(loginForm.AuthenticatedUser);
+            Assert.AreNotEqual(DialogResult.OK, loginForm.DialogResult);
+        }
+
     }
 }

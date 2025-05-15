@@ -13,14 +13,11 @@ namespace Marketplace.Tests
         [TestMethod]
         public void HashPassword_ReturnsConsistentHash()
         {
-            // Arrange
             string password = "TestPassword123";
 
-            // Act
             string hash1 = SignUp.HashPassword(password);
             string hash2 = SignUp.HashPassword(password);
 
-            // Assert
             Assert.AreEqual(hash1, hash2, "Хеши одного пароля должны совпадать");
         }
 
@@ -30,14 +27,11 @@ namespace Marketplace.Tests
         [TestMethod]
         public void ValidateInput_RejectsShortPassword()
         {
-            // Arrange
             var form = new SignUp();
             form.TextBox_SignUpForm_Password1.Text = "123"; // Пароль короче 8 символов
 
-            // Act
             bool isValid = form.ValidateInput();
 
-            // Assert
             Assert.IsFalse(isValid, "Короткий пароль должен быть отклонен");
         }
 
@@ -47,15 +41,12 @@ namespace Marketplace.Tests
         [TestMethod]
         public void ValidateInput_RejectsMismatchedPasswords()
         {
-            // Arrange
             var form = new SignUp();
             form.TextBox_SignUpForm_Password1.Text = "Password123";
             form.TextBox_SignUpForm_Password2.Text = "Password456";
 
-            // Act
             bool isValid = form.ValidateInput();
 
-            // Assert
             Assert.IsFalse(isValid, "Несовпадающие пароли должны быть отклонены");
         }
     }
