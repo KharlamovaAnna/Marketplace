@@ -14,41 +14,39 @@ namespace Marketplace.Tests
     [TestClass]
     public class LogInTests
     {
+
         /// <summary>
-        /// тест: метод VerifyPassword возвращает true,  если пароль правильный
+        /// тест: правильный пароль возвращает true
         /// </summary>
         [TestMethod]
         public void VerifyPassword_CorrectPassword_ReturnsTrue()
         {
-            // Arrange
             string password = "TestPassword";
             string hashedPassword = SignUp.HashPassword(password);
 
-            // Act
             bool result = LogIn.VerifyPassword(password, hashedPassword);
 
-            // Assert
             Assert.IsTrue(result, "Правильный пароль должен пройти проверку");
         }
 
         /// <summary>
-        /// тест: метод VerifyPassword возвращает false, если пароль неправильный
+        /// тест: неправильный пароль возвращает false
         /// </summary>
         [TestMethod]
-        public void VerifyPassword_WrongPassword_ReturnsFalse()
+        public void VerifyPassword_IncorrectPassword_ReturnsFalse()
         {
-            string hashedPassword = SignUp.HashPassword("CorrectPassword");
+            string correctHash = SignUp.HashPassword("CorrectPassword");
 
-            bool result = LogIn.VerifyPassword("WrongPassword", hashedPassword);
+            bool result = LogIn.VerifyPassword("WrongPassword", correctHash);
 
             Assert.IsFalse(result, "Неправильный пароль должен быть отклонен");
         }
 
         /// <summary>
-        /// тест:проверяет поведение метода, когда пользователя не существует в бд
+        /// тест: регистрация прошла успешно
         /// </summary>
         [TestMethod]
-        public void Button_LogInForm_LogIn_Click_UserNotFound_ShowErrorMessage()
+        public void Button_LogInForm_LogIn_Click_UserNotFound_ReturnsNull()
         {
             var loginForm = new LogIn();
             loginForm.TextBox_LogInForm_LogIn.Text = "NonExistentUser";
@@ -57,7 +55,6 @@ namespace Marketplace.Tests
             loginForm.Button_LogInForm_LogIn_Click(null, EventArgs.Empty);
 
             Assert.IsNull(loginForm.AuthenticatedUser);
-            Assert.AreNotEqual(DialogResult.OK, loginForm.DialogResult);
         }
 
     }

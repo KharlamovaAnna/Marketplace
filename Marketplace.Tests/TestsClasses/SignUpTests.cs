@@ -1,12 +1,78 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Project.Forms;
 using System;
+using System.Reflection;
+using System.Windows.Forms;
 
 namespace Marketplace.Tests
 {
     [TestClass]
     public class SignUpTests
     {
+        /// <summary>
+        /// тест: одинаковые пароль дают одинаковые хэши
+        /// </summary>
+        [TestMethod]
+        public void HashPassword_SamePasswords_ReturnSameHash()
+        {
+            string hash1 = SignUp.HashPassword("password");
+            string hash2 = SignUp.HashPassword("password");
+
+            Assert.AreEqual(hash1, hash2);
+        }
+
+        /// <summary>
+        /// тест: пустой логин возвраащет false
+        /// </summary>
+        [TestMethod]
+        public void ValidateInput_EmptyLogin_ReturnsFalse()
+        {
+            var signUpForm = new SignUp();
+            var textBox = new TextBox { Text = "" };
+
+            typeof(SignUp).GetField("TextBox_SignUpForm_Login", BindingFlags.NonPublic | BindingFlags.Instance)
+                .SetValue(signUpForm, textBox);
+
+            var result = (bool)typeof(SignUp).GetMethod("ValidateInput", BindingFlags.NonPublic | BindingFlags.Instance)
+                .Invoke(signUpForm, null);
+
+            Assert.IsFalse(result);
+        }
+
+        /// <summary>
+        /// тест: совпадающие логины возвращают true
+        /// </summary>
+        [TestMethod]
+        public void ValidateInput_MatchingPasswords_ReturnsTrue()
+        {
+            var signUpForm = new SignUp();
+            var textBox1 = new TextBox { Text = "password123" };
+            var textBox2 = new TextBox { Text = "password123" };
+
+            typeof(SignUp).GetField("TextBox_SignUpForm_Password1", BindingFlags.NonPublic | BindingFlags.Instance)
+                .SetValue(signUpForm, textBox1);
+            typeof(SignUp).GetField("TextBox_SignUpForm_Password2", BindingFlags.NonPublic | BindingFlags.Instance)
+                .SetValue(signUpForm, textBox2);
+
+            var result = (bool)typeof(SignUp).GetMethod("ValidateInput", BindingFlags.NonPublic | BindingFlags.Instance)
+                .Invoke(signUpForm, null);
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void TextBox_SignUpForm_Login_KeyPress_RussianLettersBlocked()
+        {
+            var signUpForm = new SignUp();
+            var textBox = new TextBox();
+            var e = new KeyPressEventArgs('а');
+
+            typeof(SignUp).GetMethod("TextBox_SignUpForm_Login_KeyPress", BindingFlags.NonPublic | BindingFlags.Instance)
+                .Invoke(signUpForm, new object[] { textBox, e });
+
+            Assert.IsTrue(e.Handled);
+        }
+
         /// <summary>
         /// Тест: проверяет, что метод хеширования пароля всегда возвращает одинаковый результат при одинаковом входном пароле
         /// </summary>
