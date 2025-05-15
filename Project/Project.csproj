@@ -78,6 +78,18 @@
     <Compile Include="Classes\Survey.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\Users_answer.cs" />
+    <Compile Include="Forms\ChooseBrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChooseBrand.Designer.cs">
+      <DependentUpon>ChooseBrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChooseCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChooseCategory.Designer.cs">
+      <DependentUpon>ChooseCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Favourite.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +128,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\ChooseBrand.resx">
+      <DependentUpon>ChooseBrand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChooseCategory.resx">
+      <DependentUpon>ChooseCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Favourite.resx">
       <DependentUpon>Favourite.cs</DependentUpon>
     </EmbeddedResource>
