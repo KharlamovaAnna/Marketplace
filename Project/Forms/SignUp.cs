@@ -52,7 +52,7 @@ namespace Project.Forms
             }
         }
 
-        private bool ValidateInput()
+        public bool ValidateInput()
         {
             if (string.IsNullOrWhiteSpace(TextBox_SignUpForm_Login.Text))
             {

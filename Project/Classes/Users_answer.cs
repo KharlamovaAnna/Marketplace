@@ -11,5 +11,8 @@ namespace Project.Classes
         public int ID { get; set; }
         public int User_ID { get; set; }
         public int Option_ID { get; set; }
+
+        public virtual User User { get; set; }
+        public virtual Option Option { get; set; }
     }
 }

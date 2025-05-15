@@ -13,5 +13,7 @@ namespace Project.Classes
         public string Text { get; set; }
         public string Question_Type { get; set; }
 
+        public virtual Survey Survey { get; set; }
+        public virtual ICollection<Option> Options { get; set; }
     }
 }

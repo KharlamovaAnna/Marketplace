@@ -13,5 +13,6 @@ namespace Project.Classes
         public string Description { get; set; }
         public bool Is_Active { get; set; } // ????
 
+        public virtual ICollection<Question> Questions { get; set; }
     }
 }

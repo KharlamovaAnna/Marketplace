@@ -14,5 +14,8 @@ namespace Project.Classes
         public decimal Price { get; set; }
         public string Category { get; set; }
         // image url это че как
+
+        public virtual ICollection<Favourite> Favourites { get; set; }
+        public virtual ICollection<Hidden_Product> Hidden_Products { get; set; }
     }
 }

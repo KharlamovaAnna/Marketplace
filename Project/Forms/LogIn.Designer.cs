@@ -100,8 +100,8 @@ namespace Project.Forms
 
         #endregion
 
-        private System.Windows.Forms.TextBox TextBox_LogInForm_LogIn;
-        private System.Windows.Forms.TextBox TextBox_LogInForm_Password;
-        private System.Windows.Forms.Button Button_LogInForm_LogIn;
+        public System.Windows.Forms.TextBox TextBox_LogInForm_LogIn;
+        public System.Windows.Forms.TextBox TextBox_LogInForm_Password;
+        public System.Windows.Forms.Button Button_LogInForm_LogIn;
     }
 }

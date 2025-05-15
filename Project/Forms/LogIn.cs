@@ -62,7 +62,7 @@ namespace Project.Forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Button_LogInForm_LogIn_Click(object sender, EventArgs e)
+        public void Button_LogInForm_LogIn_Click(object sender, EventArgs e)
         {
             using (var db = new Classes.AppContext())
             {

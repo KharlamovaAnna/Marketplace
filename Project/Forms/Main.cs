@@ -18,7 +18,7 @@ namespace Project
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
-        private void Button_MainForm_LogInOpenForm_Click(object sender, EventArgs e)
+        public void Button_MainForm_LogInOpenForm_Click(object sender, EventArgs e)
         {
             LogIn logInForm = new LogIn();
             logInForm.Show();
@@ -26,7 +26,7 @@ namespace Project
 
             this.Hide();
         }
-        private void Button_MainForm_SignUpOpenForm_Click(object sender, EventArgs e)
+        public void Button_MainForm_SignUpOpenForm_Click(object sender, EventArgs e)
         {
             SignUp SignUpForm = new SignUp();
             SignUpForm.Show();

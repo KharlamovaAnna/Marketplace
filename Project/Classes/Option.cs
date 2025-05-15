@@ -13,5 +13,7 @@ namespace Project.Classes
         public string Text { get; set; }
         public int Weight { get; set; }
 
+        public virtual Question Question { get; set; }
+        public virtual ICollection<Users_answer> User_answers { get; set; }
     }
 }
