@@ -57,5 +57,20 @@ namespace Marketplace.Tests
             Assert.IsNull(loginForm.AuthenticatedUser);
         }
 
+        /// <summary>
+        /// тест: проверяет, что форма логина не регистрирует пользователя при пустом пароле
+        /// </summary>
+        [TestMethod]
+        public void Button_LogIn_Click_EmptyPassword_DoesNotAuthenticateUser()
+        {
+            var loginForm = new LogIn();
+            loginForm.TextBox_LogInForm_LogIn.Text = "testuser";
+            loginForm.TextBox_LogInForm_Password.Text = "";
+
+            loginForm.Button_LogInForm_LogIn_Click(null, EventArgs.Empty);
+
+            Assert.IsNull(loginForm.AuthenticatedUser);
+        }
+
     }
 }

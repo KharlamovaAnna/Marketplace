@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Project.Classes;
 using Project.Forms;
 using System;
 using System.Reflection;
@@ -20,6 +21,7 @@ namespace Marketplace.Tests
 
             Assert.AreEqual(hash1, hash2);
         }
+
 
         /// <summary>
         /// тест: пустой логин возвраащет false
@@ -94,7 +96,7 @@ namespace Marketplace.Tests
         public void ValidateInput_RejectsShortPassword()
         {
             var form = new SignUp();
-            form.TextBox_SignUpForm_Password1.Text = "123"; // Пароль короче 8 символов
+            form.TextBox_SignUpForm_Password1.Text = "123"; 
 
             bool isValid = form.ValidateInput();
 
@@ -114,6 +116,37 @@ namespace Marketplace.Tests
             bool isValid = form.ValidateInput();
 
             Assert.IsFalse(isValid, "Несовпадающие пароли должны быть отклонены");
+        }
+
+        /// <summary>
+        /// тест:пароль из 8 символов проходит валидацию
+        /// </summary>
+        [TestMethod]
+        public void ValidateInput_AllowsPasswordWithEightCharacters()
+        {
+            var form = new SignUp();
+            form.TextBox_SignUpForm_Password1.Text = "12345678"; // Ровно 8 символов
+
+            bool isValid = form.ValidateInput();
+
+            Assert.IsTrue(isValid, "Пароль из 8 символов должен быть принят");
+        }
+
+        /// <summary>
+        /// тест: проверяет что форма не регистрирует пользователя с пустым именем
+        /// </summary>
+        [TestMethod]
+        public void ValidateInput_EmptyName_ReturnsFalse()
+        {
+            var form = new SignUp();
+            form.TextBox_SignUpForm_Login.Text = "testuser";
+            form.TextBox_SignUpForm_Password1.Text = "password123";
+            form.TextBox_SignUpForm_Password2.Text = "password123";
+            form.TextBox_SignUpForm_Name.Text = "";
+
+            bool isValid = form.ValidateInput();
+
+            Assert.IsFalse(isValid, "Регистрация должна быть отклонена при пустом имени");
         }
     }
 }

@@ -116,10 +116,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox TextBox_SignUpForm_Login;
+        public System.Windows.Forms.TextBox TextBox_SignUpForm_Login;
         public System.Windows.Forms.TextBox TextBox_SignUpForm_Password1;
         public System.Windows.Forms.TextBox TextBox_SignUpForm_Password2;
-        private System.Windows.Forms.TextBox TextBox_SignUpForm_Name;
+        public System.Windows.Forms.TextBox TextBox_SignUpForm_Name;
         private System.Windows.Forms.Button Button_SignUpForm_SignUp;
     }
 }
