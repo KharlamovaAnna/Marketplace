@@ -13,9 +13,7 @@ namespace Project.Forms
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
-        /// <summary>
-        /// события для TextBox_LogInForm_LogIn
-        /// </summary>
+
         private void TextBox_LogInForm_LogIn_Enter(object sender, EventArgs e)
         {
             if (TextBox_LogInForm_LogIn.Text == "Username")
@@ -32,9 +30,7 @@ namespace Project.Forms
                 TextBox_LogInForm_LogIn.ForeColor = SystemColors.GrayText;
             }
         }
-        /// <summary>
-        /// события для TextBox_LogInForm_Password
-        /// </summary>
+
         private void TextBox_LogInForm_Password_Enter(object sender, EventArgs e)
         {
             if (TextBox_LogInForm_Password.Text == "Password")
@@ -78,9 +74,7 @@ namespace Project.Forms
                 this.Close();
             }
         }
-        /// <summary>
-        /// верификация пароля
-        /// </summary>
+
         public static bool VerifyPassword(string password, string hashedPassword)
         {
             string inputHash = SignUp.HashPassword(password);

@@ -1,9 +1,11 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using System.Linq;
 
 namespace Project.Forms
 {
+    /// <summary>
+    /// класс выбора товара
+    /// </summary>
     public partial class ChooseItem : Form
     {
         private int userID;

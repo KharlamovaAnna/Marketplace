@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace Project.Forms
 {
+    /// <summary>
+    /// класс для выбора бренда
+    /// </summary>
     public partial class ChooseBrand : Form
     {
         private int userID;

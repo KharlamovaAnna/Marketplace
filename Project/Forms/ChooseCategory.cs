@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace Project.Forms
 {
     /// <summary>
-    /// форма выбора категории
+    /// класс выбора категории
     /// </summary
     public partial class ChooseCategory : Form
     {
