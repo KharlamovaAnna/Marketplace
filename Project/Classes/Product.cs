@@ -26,5 +26,9 @@
         /// ссылка на изображение товара
         /// </summary>
         public string Image_url { get; set; }
+        /// <summary>
+        /// ну бренд
+        /// </summary>
+        public string Brand { get; set; }
     }
 }

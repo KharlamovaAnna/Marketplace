@@ -2,9 +2,9 @@
 
 namespace Project.Forms
 {
-    public partial class Favourite : Form
+    public partial class FavouriteItem : Form
     {
-        public Favourite()
+        public FavouriteItem()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;

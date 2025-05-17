@@ -90,11 +90,17 @@
     <Compile Include="Forms\ChooseCategory.Designer.cs">
       <DependentUpon>ChooseCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Favourite.cs">
+    <Compile Include="Forms\ChooseItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Favourite.Designer.cs">
-      <DependentUpon>Favourite.cs</DependentUpon>
+    <Compile Include="Forms\ChooseItem.Designer.cs">
+      <DependentUpon>ChooseItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FavouriteItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FavouriteItem.Designer.cs">
+      <DependentUpon>FavouriteItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ItemInfo.cs">
       <SubType>Form</SubType>
@@ -126,6 +132,15 @@
     <Compile Include="Forms\SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202505041929500_InitialCreate.cs" />
+    <Compile Include="Migrations\202505041929500_InitialCreate.Designer.cs">
+      <DependentUpon>202505041929500_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202505162043074_InitialCreate1.cs" />
+    <Compile Include="Migrations\202505162043074_InitialCreate1.Designer.cs">
+      <DependentUpon>202505162043074_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\ChooseBrand.resx">
@@ -134,8 +149,11 @@
     <EmbeddedResource Include="Forms\ChooseCategory.resx">
       <DependentUpon>ChooseCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Favourite.resx">
-      <DependentUpon>Favourite.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ChooseItem.resx">
+      <DependentUpon>ChooseItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FavouriteItem.resx">
+      <DependentUpon>FavouriteItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ItemInfo.resx">
       <DependentUpon>ItemInfo.cs</DependentUpon>
@@ -151,6 +169,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505041929500_InitialCreate.resx">
+      <DependentUpon>202505041929500_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505162043074_InitialCreate1.resx">
+      <DependentUpon>202505162043074_InitialCreate1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

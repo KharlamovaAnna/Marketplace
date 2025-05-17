@@ -1,6 +1,6 @@
 ﻿namespace Project.Forms
 {
-    partial class ChooseBrand
+    partial class ChooseItem
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChooseBrand));
-            this.checkedListBoxBrands = new System.Windows.Forms.CheckedListBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChooseItem));
+            this.checkedListBoxItems = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
-            // checkedListBoxBrands
+            // checkedListBoxItems
             // 
-            this.checkedListBoxBrands.FormattingEnabled = true;
-            this.checkedListBoxBrands.Location = new System.Drawing.Point(117, 182);
-            this.checkedListBoxBrands.Name = "checkedListBoxBrands";
-            this.checkedListBoxBrands.Size = new System.Drawing.Size(297, 214);
-            this.checkedListBoxBrands.TabIndex = 0;
+            this.checkedListBoxItems.FormattingEnabled = true;
+            this.checkedListBoxItems.Location = new System.Drawing.Point(90, 155);
+            this.checkedListBoxItems.Name = "checkedListBoxItems";
+            this.checkedListBoxItems.Size = new System.Drawing.Size(260, 169);
+            this.checkedListBoxItems.TabIndex = 0;
             // 
-            // ChooseBrand
+            // ChooseItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(531, 528);
-            this.Controls.Add(this.checkedListBoxBrands);
+            this.ClientSize = new System.Drawing.Size(444, 442);
+            this.Controls.Add(this.checkedListBoxItems);
             this.MaximizeBox = false;
-            this.Name = "ChooseBrand";
+            this.Name = "ChooseItem";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.CheckedListBox checkedListBoxBrands;
+        private System.Windows.Forms.CheckedListBox checkedListBoxItems;
     }
 }

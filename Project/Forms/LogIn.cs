@@ -53,9 +53,6 @@ namespace Project.Forms
         }
 
         public User AuthenticatedUser { get; private set; }
-        /// <summary>
-        /// ну вход короче туда сюда
-        /// </summary>
         private void Button_LogInForm_LogIn_Click(object sender, EventArgs e)
         {
             using (var db = new Classes.AppContext())
